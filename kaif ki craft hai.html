@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<title>Page title</title>
+</head>
+<style>
+				@font-face  {
+								font-family: 'kaif';
+								src: url('fonts/FjallaOne-Regular.ttf');
+				}
+				* 
+				{
+								margin: 0;
+								padding: 0;
+								box-sizing: border-box;
+								font-family: 'kaif';
+				}
+				body 
+				{
+								justify-content: center;
+								align-items: center;
+								min-height: 100vh;
+								display: flex;
+								background: #2f2f2f;
+				}
+				div 
+				{
+								background: #2f2f2f;
+								height: 300px;
+								width: 700px;
+								border-radius: 150px;
+								box-shadow: inset 20px 20px 30px rgba(0,0,0,0.5),
+								            inset 40px 40px 50px rgba(0,0,0,0.5),
+								            inset -20px -20px 30px rgba(255,255,255,0.1);
+								            position: relative;
+				}
+				div::after 
+				{
+								position: absolute;
+								content: '';
+								background: radial-gradient(#ff4a2b,#ff1f00);
+								height: 40px;
+								width: 40px;
+								border-radius: 50%;
+								top: 43%;
+								right: 15%;
+								box-shadow: 0px 0px 10px rgba(255,0,0,0.8),
+								            0px 0px 20px rgba(255,0,0,0.8),
+								            0px 0px 40px rgba(255,0,0,0.8),
+								            0px 0px 70px rgba(255,0,0,0.8);
+				}
+				div::before 
+				{
+								position: absolute;
+								content: '';
+								background: radial-gradient(#66ff55,#00ff03);
+								height: 40px;
+								width: 40px;
+								border-radius: 50%;
+								top: 43%;
+								left: 15%;
+								box-shadow: 0px 0px 10px rgba(0,255,0,0.8),
+								            0px 0px 20px rgba(0,255,0,0.8),
+								            0px 0px 40px rgba(0,255,0,0.8),
+								            0px 0px 70px rgba(0,255,0,0.8);
+				}
+				label 
+				{
+								height: 100%;
+								position: absolute;
+								width: 70%;
+								border-radius: 150px;
+								background: #484848;
+								top: 0;
+								left: 0;
+								box-shadow: inset 20px 20px 30px rgba(255,255,255,0.2),
+								            inset -20px -20px 30px rgba(0,0,0,0.5),
+								            20px 20px 30px rgba(0,0,0,0.5),
+								            40px 40px 60px rgba(0,0,0,0.5);
+								transition: 0.2s;
+								z-index: 2;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								min-height: 100%;
+				}
+				#check:checked + label 
+				{
+								transform: translateX(45%);
+				}
+				#check 
+				{
+								display: none;
+				}
+				span 
+				{
+							 text-transform: uppercase;
+							 color: transparent;
+							 font-size: 5em;
+							 text-shadow: 1px 1px 1px rgba(255,255,255,0.4),
+							              0px 0px 0px rgba(0,0,0,1);
+							 transition: 0.2s;
+				}
+				.sanp 
+				{
+								color: #ffffff;
+								text-shadow: 0px 0px 10px rgba(255,255,255,0.5),
+								             0px 0px 20px rgba(255,255,255,0.5),
+								             0px 0px 40px rgba(255,255,255,0.5),
+								             0px 0px 80px rgba(255,255,255,0.5);
+				}
+</style>
+<body>
+				<div>
+				<input type="checkbox" id="check">
+				<label id="but" for="check">
+								<span>Push</span>
+				</label>
+				</div>
+</body>
+<script>
+			var aud = new Audio();
+			var a = "a";
+			aud.src = 'audio/switch-14.mp3';	document.getElementById('but').addEventListener('click', function() {
+								aud.play();
+								if (a == "a") {
+												a = "b";
+												document.querySelector('span').setAttribute('class', "sanp");
+								} else {
+												a = "a";
+												document.querySelector('span').setAttribute('class', "a");
+								}
+				})
+</script>
+</html>
